@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OmniBridge</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">OB</div>
+      <div class="brandText">
+        <div class="brandTitle">OmniBridge</div>
+        <div class="brandSub">Gesture • Speech • Text</div>
+      </div>
+    </div>
+
+
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Adaptive Input Portal</h1>
+      <p>
+        User A: <b>hand gestures</b> or text. User B: <b>speech</b> or text.
+      </p>
+    </section>
+
+    <div class="grid">
+      <!-- USER A -->
+      <section class="card">
+        <div class="cardHead">
+          <div>
+            <div class="cardTitle">User A</div>
+            <div class="cardMeta">Gesture / Text</div>
+          </div>
+          <div class="chip" id="cameraChip" title="Click to open browser webcam">Camera</div>
+        </div>
+
+        <div class="media">
+          <video id="cam" autoplay playsinline></video>
+          <canvas id="overlay"></canvas>
+          <img id="gestureFrame" alt="Gesture camera" class="gestureFrame" />
+        </div>
+
+        <div class="actions">
+          <button id="gestureToggle" class="btn">Start gesture</button>
+          <button id="trainLettersBtn" class="btn btnGhost">Train specific letters</button>
+        </div>
+
+        <div id="trainLettersModal" class="trainModal" hidden>
+          <div class="trainModalBackdrop"></div>
+          <div class="trainModalPanel">
+            <h3 class="trainModalTitle">Train specific letter</h3>
+            <p class="trainModalHint">Enter the letter you want to practice (A–Y, no J). Use the camera to show that hand sign.</p>
+            <label class="label" for="trainLetterInput">Letter</label>
+            <input type="text" id="trainLetterInput" class="trainLetterInput" maxlength="1" placeholder="e.g. A" autocomplete="off" />
+            <div class="trainModalActions">
+              <button id="trainLettersClose" class="btn">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <label class="label" for="aText">Message</label>
+        <textarea id="aText" placeholder="Detected gesture appears here, or type a message..."></textarea>
+      </section>
+
+      <!-- USER B -->
+      <section class="card">
+        <div class="cardHead">
+          <div>
+            <div class="cardTitle">User B</div>
+            <div class="cardMeta">Speech / Text</div>
+          </div>
+          <div class="chip">Audio</div>
+        </div>
+
+        <div class="actions">
+          <button id="startSpeech" class="btn">🎤 Start speaking</button>
+          <button id="stopSpeech" class="btn btnGhost">Stop</button>
+          <button id="speakTts" class="btn" title="Text-to-speech (backend)">🔊 Speak</button>
+          <label class="btn btnGhost" for="sttFileInput" title="Upload audio file → text">📁 Upload audio</label>
+          <input type="file" id="sttFileInput" accept="audio/*,.wav" hidden>
+        </div>
+
+        <label class="label" for="bText">Message</label>
+        <textarea id="bText" placeholder="Speech appears here, or type a message..."></textarea>
+        <p id="speechTip" class="speechTip" aria-live="polite" hidden>Tip: speak clearly for 2+ seconds, check mic is selected.</p>
+      </section>
+    </div>
+
+
+  </main>
+
+  <!-- MediaPipe Hands CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
+
