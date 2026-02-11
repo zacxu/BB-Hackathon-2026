@@ -63,7 +63,7 @@ The backend does **not** run the Python camera script; it only loads `model.p` a
 - Create and use a virtual environment (optional but recommended):
 
 ```bash
-python -m venv venv
+python -3.12 -m venv venv
 # Windows
 venv\Scripts\activate
 # Linux/macOS
