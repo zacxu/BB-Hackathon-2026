@@ -1,6 +1,6 @@
 # OmniBridge
 
-**OmniBridge** is a web app for adaptive communication: **User A** can input via **hand gestures (ASL)** or text; **User B** can input via **speech** or text. No chat/WebSocket—each side has a message box fed by gesture, speech, or typing.
+**OmniBridge** is a web app for adaptive communication: **User A** can input via **hand gestures (ASL)** or text; **User B** can input via **speech** or text.
 
 ---
 
