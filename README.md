@@ -136,10 +136,3 @@ If speech is not detected, a short tip appears under the User B message box (“
 | POST | `/api/speech/tts` | Body: `{ "text": "..." }`. Returns WAV audio. |
 | POST | `/api/speech/stt` | Form: `file` (WAV or WebM). Returns `{ "text": "...", "understood": true \| false }`. |
 
----
-
-## License and credits
-
-- MediaPipe Hands: [Google MediaPipe](https://developers.google.com/mediapipe)
-- SpeechRecognition: [SpeechRecognition](https://github.com/Uberi/speech_recognition) (Google web API used for STT)
-- pyttsx3: [pyttsx3](https://github.com/nateshmbhat/pyttsx3) for TTS
