@@ -225,14 +225,14 @@ while True:
                             bar_width = int((x2 - x1) * progress)
                             cv2.rectangle(frame, (x1, y2 + 5), (x1 + bar_width, y2 + 15), (0, 255, 255), -1)
                             cv2.rectangle(frame, (x1, y2 + 5), (x2, y2 + 15), (255, 255, 255), 2)
-                            cv2.putText(frame, f"{predicted_character} ({remaining_time:.1f}s)", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+                            cv2.putText(frame, f"{predicted_character} ({remaining_time:.1f}s)", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (255, 255, 255), 2, cv2.LINE_AA)
                         else:
-                            cv2.putText(frame, predicted_character, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+                            cv2.putText(frame, predicted_character, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (255, 255, 255), 2, cv2.LINE_AA)
                         cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 255, 255), 1)
                 else:
                     detection_start_time = current_time
                     cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 255, 255), 1)
-                    cv2.putText(frame, predicted_character, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+                    cv2.putText(frame, predicted_character, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (255, 255, 255), 2, cv2.LINE_AA)
     else:
         last_detected_letter = None
         detection_start_time = None
